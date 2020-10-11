@@ -1,0 +1,8 @@
+.container-fluid{
+    background-image: url('../../assets/img/main-fondo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    height:100em;
+}

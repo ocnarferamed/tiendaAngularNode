@@ -1,0 +1,19 @@
+.row{
+    background-image: url('../../assets/img/login-fondo.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 40em;
+}
+
+label {
+    color: white;
+}
+
+form{
+    margin-top: 50%;
+}
+
+button{
+    display: block;
+}

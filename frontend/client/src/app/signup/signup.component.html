@@ -1,0 +1,15 @@
+<div class="row">
+    <div class="col-4 offset-4 ">
+        <form [formGroup]="miFormulario" (ngSubmit)="enviarFormulario()">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email</label>
+              <input type="email" class="form-control"  formControlName="email" name="email"  placeholder="Introducir Email" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" >
+            </div>
+            <div class="form-group">
+              <label for="exampleInputPassword1">Contraseña</label>
+              <input type="password" class="form-control" formControlName="password" name="password" placeholder="Contraseña">
+            </div>
+            <button type="submit" class=" mx-auto btn btn-danger">Crear cuenta</button>
+          </form>
+    </div>
+</div>
