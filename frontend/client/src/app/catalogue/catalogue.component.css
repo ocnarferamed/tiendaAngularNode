@@ -1,10 +1,20 @@
 .product-display{
-   background-color:#eff3f7;
-    
+   background-color:#afc7df;
+   background:rgba(56, 255, 255, 0.171)
 }
+
 
 .card-img-top {
    width: 100%;
    height: 12vw;
    object-fit: cover;
+   
 }
+
+
+#cantidad{
+   width:20%;
+   
+}
+
+

@@ -1,1 +1,28 @@
-<p>cart works!</p>
+
+<div class="row ">
+<div class="col-6  mt-5 offset-1">
+        <div class="card "  *ngFor="let product of productsOnCart">
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+                <img src="../../assets/{{product.img}}" class="img-fluid img-thumbnail">  
+            <strong class="ml-2 mr-4">{{product.name}}</strong>
+            <span>precio: $ {{product.price}}</span>
+            <span>cantidad: {{product.onCart}}</span> 
+            <span class="subtotal">subtotal: $ {{product.onCart*product.price}}</span>
+            </li>
+            </ul>
+        </div>
+    </div>
+<div class="col-4 mt-5 offset-1">
+     <div class="card  " style="width: 12rem;">
+        <div class="card-body">
+        <h5 class="card-title">Total</h5>
+        <h6 class="card-subtitle mb-2 text-muted">${{total}}</h6>
+        <a type="button" (click)="updateProduct()"   routerLink="/main"class="btn btn-primary" >
+            Comprar
+        </a>
+        </div>
+    </div>
+    </div>
+</div>
+

@@ -4,40 +4,29 @@
       <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand">Catalogo de productos</a>
         <form class="form-inline">
-          <input class="form-control mr-sm-2" type="search" placeholder="Buscar productos" aria-label="Search">
-          <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Buscar</button>
+          <input class="form-control mr-sm-2" type="text" name="filterproducts" placeholder="Buscar productos" [(ngModel)]="filterproducts" aria-label="Search">
         </form>
       </nav>
     </div>
   </div>
-  <div class="row" >
-    <div class="col-4"*ngFor="let product of col1">
-      <div class="card mt-3  ml-4" style="width: 18rem;">
-        <img class="card-img-top" src="../../assets/{{product.img}}" alt="Card image cap">
+  <div class="row"  >
+    <div class="col-4"  *ngFor="let product of productsList | filter:filterproducts" >
+      <div class="card mt-3 ml-4 " style="width: 18rem;">
+        <img class="card-img-top"  src="../../assets/{{product.img}}" alt="Card image cap">
         <div class="card-body">
-          <h5 class="card-title">{{product.name}} </h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-4"*ngFor="let product of col2">
-      <div class="card mt-3  ml-4 " style="width: 18rem;">
-        <img class="card-img-top" src="../../assets/{{product.img}}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">{{product.name}} </h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-    <div class="col-4"*ngFor="let product of col3">
-      <div class="card  mt-3" style="width: 18rem;">
-        <img class="card-img-top" src="../../assets/{{product.img}}" alt="Card image cap">
-        <div class="card-body">
-          <h5 class="card-title">{{product.name}} </h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
+          <h5 class="card-title" >{{product.name}}</h5>
+          <p class="card-text"><strong>Precio: </strong>{{product.price}}</p>
+          <p class="card-text"><strong>Unidades Disponibles: </strong>{{product.stock}}</p>
+          
+
+          <!-- Button trigger modal -->
+        <a type="button"   routerLink="/details/{{product._id}}"class="btn btn-primary" >
+          Ver mas
+        </a>
+
+      
+          <a  (click)="agregar(product,cantidad.value)" type="submit" class=" ml-2 btn btn-warning" >Agregar</a> 
+            <input type="number" class="ml-1"  #cantidad  id="cantidad"  name="cantidad" min="0" max="{{product.stock}}">
         </div>
       </div>
     </div>

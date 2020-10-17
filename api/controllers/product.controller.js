@@ -10,6 +10,7 @@ productController.getProducts = async (req,res)=>{
 
 productController.updateProducts = async (req,res)=>{
     const id = req.params.id;
+    console.log(req.body)
     const newStock = req.body.stock;
     console.log(id,newStock)
     await Product.findOneAndUpdate({_id: id}, {stock:newStock}, {new: true}, (err, doc) => {

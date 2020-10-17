@@ -11,6 +11,8 @@ import { CatalogueComponent } from './catalogue/catalogue.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {  HttpClientModule } from '@angular/common/http';
 import { LoginService } from './services/login.service';
+import { FilterPipe } from './pipes/filter.pipe';
+import { DetailsComponent } from './details/details.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { LoginService } from './services/login.service';
     MainComponent,
     CartComponent,
     NavbarComponent,
-    CatalogueComponent
+    CatalogueComponent,
+    FilterPipe,
+    DetailsComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +33,8 @@ import { LoginService } from './services/login.service';
       {path:'', component: LoginComponent},
       {path:'signup', component: SignupComponent},
       {path:'main', component: MainComponent},
-      {path:'cart',component: CartComponent}
+      {path:'cart',component: CartComponent},
+      {path:'details/:id', component: DetailsComponent}
     ]),
     FormsModule,
     ReactiveFormsModule,
